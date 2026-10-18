@@ -66,14 +66,15 @@
     <section aria-labelledby="use-title">
       <h2 id="use-title">How we use information</h2>
       <p>We use this information to understand your list, find products, prepare and edit your cart, remember your preferences, prepare checkout, submit confirmed development orders, and reply on WhatsApp. Historical mock orders remain simulated. We also use records to prevent duplicate processing, investigate failures and handle support or privacy requests.</p>
+      <p>When optional voice replies are enabled, the assistant can accompany a written reply with AI-generated speech. Each audio reply identifies itself as AI-generated; it is not a live person speaking.</p>
       <p>AI can misunderstand messages, speech or images. Please check the cart and details before confirming a demo order. You do not need to send payment credentials or identity documents to try the prototype.</p>
     </section>
 
     <section aria-labelledby="services-title">
       <h2 id="services-title">Services that process information</h2>
       <ul>
-        <li><strong>WhatsApp / Meta</strong> carries your messages and our replies.</li>
-        <li><strong>OpenAI</strong> receives message text, voice audio or transcripts, images, and relevant shopping context to understand your requests.</li>
+        <li><strong>WhatsApp / Meta</strong> carries your messages and our replies, including generated audio uploaded for delivery when voice replies are enabled.</li>
+        <li><strong>OpenAI</strong> receives message text, voice audio or transcripts, images, and relevant shopping context to understand your requests. When voice replies are enabled, it also receives the reply text and selected voice settings to generate speech.</li>
         <li><strong>Render</strong> runs the application; <strong>Supabase</strong> stores its conversation, customer, cart, development or mock order and operational records.</li>
         <li><strong>JioMart</strong> receives product search terms and the prototype's configured demo pincode to return catalog listings.</li>
         <li><strong>JioCommerce Platform (JCP)</strong> receives your cart, name, phone number and delivery address when preparing development checkout. After you tap <strong>Place order</strong>, it receives the confirmed order and returns development order, shipment and status records. These are test orders, not physical fulfilment.</li>
@@ -85,6 +86,7 @@
     <section aria-labelledby="retention-title">
       <h2 id="retention-title">What stays after a conversation</h2>
       <p>The application processes downloaded voice audio and images temporarily. It does not archive those media files or save new raw voice transcripts in its conversation database. Resolved shopping details, replies, and the original WhatsApp message metadata can still remain.</p>
+      <p>Generated audio bytes are also temporary in the application. To prepare and deliver voice replies reliably, its queue stores the reply-derived speech text, selected voice profile, preparation status and WhatsApp media identifier. This does not create an application archive of the audio, and provider copies remain subject to the providers' own practices.</p>
       <p>Ordinary text messages, profile and delivery details, carts, development or mock orders, replies and operational records are retained so the conversation can continue. The prototype currently has no automatic deletion schedule for these records. The chat command below clears local profile and conversation records while retaining minimal duplicate-prevention and acceptance records. Orders and customer records already sent to JCP remain there. Deleting a WhatsApp chat on your phone does not delete the application's stored records.</p>
       <p>Our handling of temporary media does not mean that WhatsApp, OpenAI or infrastructure providers retain no data. Their policies and account settings apply to their own processing.</p>
     </section>
