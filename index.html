@@ -66,7 +66,7 @@
     <section aria-labelledby="use-title">
       <h2 id="use-title">How we use information</h2>
       <p>We use this information to understand your list, find products, prepare and edit your cart, remember your preferences, prepare checkout, submit confirmed development orders, and reply on WhatsApp. Historical mock orders remain simulated. We also use records to prevent duplicate processing, investigate failures and handle support or privacy requests.</p>
-      <p>When optional voice replies are enabled, a voice note you send can receive a written reply followed by AI-generated speech. Text messages, photos, button selections and automatic order receipts or status updates receive written replies or cards only. The first successfully sent audio reply in a chat identifies itself as AI-generated; later audio replies do not repeat that notice. The voice is AI-generated, not a live person speaking.</p>
+      <p>When voice replies are enabled, ordinary answers to voice notes are delivered as AI-generated audio. Essential product photos, selection buttons, cart controls and final checkout confirmation remain visible. We do not also send duplicate conversational answer text or a listening acknowledgement during normal voice delivery. If audio is unavailable, a written reply or failure notice may be used. Text messages, photos, button selections and automatic order receipts or status updates receive written replies or cards only. The assistant identifies itself as an AI shopping assistant in its initial introduction; audio does not repeat a spoken AI-generated prefix. The voice is synthetic, not a live person speaking.</p>
       <p>AI can misunderstand messages, speech or images. Please check the cart and details before confirming a demo order. You do not need to send payment credentials or identity documents to try the prototype.</p>
     </section>
 
@@ -74,13 +74,14 @@
       <h2 id="services-title">Services that process information</h2>
       <ul>
         <li><strong>WhatsApp / Meta</strong> carries your messages and our replies, including generated audio uploaded for delivery when voice replies are enabled.</li>
-        <li><strong>OpenAI</strong> receives message text, voice audio or transcripts, images, and relevant shopping context to understand your requests. When voice replies are enabled, it also receives the reply text and selected voice settings to generate speech.</li>
+        <li><strong>OpenAI</strong> receives message text, voice audio or transcripts, images, and relevant shopping context to understand your requests. If OpenAI is selected for speech generation, it also receives the reply text and selected voice settings.</li>
+        <li><strong>ElevenLabs</strong> receives the reply text and selected voice profile/settings when selected to synthesize outgoing audio. We use a preset synthetic voice; this is not a recording of a store employee. OpenAI continues to handle incoming transcription and request understanding.</li>
         <li><strong>Render</strong> runs the application; <strong>Supabase</strong> stores its conversation, customer, cart, development or mock order and operational records.</li>
         <li><strong>JioMart</strong> receives product search terms and your delivery pincode, when available, to return catalog listings. Before you provide an address, searches use the configured default pincode.</li>
         <li><strong>JioCommerce Platform (JCP)</strong> receives your cart, name, phone number and delivery address when preparing development checkout. After you tap <strong>Place order</strong>, it receives the confirmed order and returns development order, shipment and status records. These are test orders, not physical fulfilment.</li>
       </ul>
       <p>Dhruv Sathe may access stored records for support, troubleshooting, security and privacy requests. We do not sell personal information or use it for advertising. These providers may process data outside your country and have their own retention and privacy practices.</p>
-      <p>Provider information: <a href="https://www.whatsapp.com/legal/privacy-policy">WhatsApp privacy policy</a>, <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a>, <a href="https://render.com/privacy">Render privacy policy</a>, <a href="https://supabase.com/privacy">Supabase privacy policy</a> and <a href="https://www.jiomart.com/page/privacy-policy">JioMart privacy policy</a>.</p>
+      <p>Provider information: <a href="https://www.whatsapp.com/legal/privacy-policy">WhatsApp privacy policy</a>, <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a>, <a href="https://elevenlabs.io/privacy-policy">ElevenLabs privacy policy</a>, <a href="https://elevenlabs.io/docs/eleven-api/resources/zero-retention-mode">ElevenLabs retention controls</a>, <a href="https://render.com/privacy">Render privacy policy</a>, <a href="https://supabase.com/privacy">Supabase privacy policy</a> and <a href="https://www.jiomart.com/page/privacy-policy">JioMart privacy policy</a>.</p>
     </section>
 
     <section aria-labelledby="retention-title">
@@ -88,7 +89,7 @@
       <p>The application processes downloaded voice audio and images temporarily. It does not archive those media files or save new raw voice transcripts in its conversation database. Resolved shopping details, replies, and the original WhatsApp message metadata can still remain.</p>
       <p>Generated audio bytes are also temporary in the application. To prepare and deliver voice replies reliably, its queue stores the reply-derived speech text, selected voice profile, preparation status and WhatsApp media identifier. This does not create an application archive of the audio, and provider copies remain subject to the providers' own practices.</p>
       <p>Ordinary text messages, profile and delivery details, carts, development or mock orders, replies and operational records are retained so the conversation can continue. The prototype currently has no automatic deletion schedule for these records. The chat command below clears local profile and conversation records while retaining minimal duplicate-prevention and acceptance records. Orders and customer records already sent to JCP remain there. Deleting a WhatsApp chat on your phone does not delete the application's stored records.</p>
-      <p>Our handling of temporary media does not mean that WhatsApp, OpenAI or infrastructure providers retain no data. Their policies and account settings apply to their own processing.</p>
+      <p>Our handling of temporary media does not mean that WhatsApp, OpenAI, ElevenLabs or infrastructure providers retain no data. ElevenLabs may retain synthesis input and output under its own practices; we do not promise zero retention. Each provider's policies and applicable account settings govern its own processing.</p>
     </section>
 
     <section id="data-deletion" aria-labelledby="deletion-title">
@@ -101,7 +102,7 @@
         <li>Include the WhatsApp phone number you used, with country code, and whether you want access, correction or deletion. Do not send passwords or verification codes.</li>
         <li>We will review the request and may ask you to confirm ownership of the number. For a verified deletion request, we will review linked customer, conversation, cart, order and message records under our control, remove eligible records, and confirm the result by email. We will explain any records we cannot remove and why, including records held by JCP.</li>
       </ol>
-      <p>Email requests are handled manually. Neither route deletes your WhatsApp account, the chat on your phone, or copies independently held by service providers such as WhatsApp, OpenAI or our hosting providers. If you message the assistant again after deletion, it will create new records.</p>
+      <p>Email requests are handled manually. Neither route deletes your WhatsApp account, the chat on your phone, or copies independently held by service providers such as WhatsApp, OpenAI, ElevenLabs or our hosting providers. If you message the assistant again after deletion, it will create new records.</p>
     </section>
 
     <section aria-labelledby="website-title">
